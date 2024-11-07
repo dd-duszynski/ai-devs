@@ -2,10 +2,8 @@ import 'dotenv/config';
 import { JSDOM } from 'jsdom';
 import OpenAI from 'openai';
 
-const URL = 'https://xyz.ag3nts.org';
-
 async function getQuestionFromPage() {
-  const response = await fetch(URL);
+  const response = await fetch(process.env.S01E01_BASE_URL);
   const text = await response.text();
   const dom = new JSDOM(text);
   const questionElement = dom.window.document.getElementById('human-question');
@@ -36,7 +34,7 @@ async function askGPT4(question) {
 }
 
 async function submitAnswer(answer) {
-  const response = await fetch(URL, {
+  const response = await fetch(process.env.S01E01_BASE_URL, {
     headers: {
       'content-type': 'application/x-www-form-urlencoded',
     },
