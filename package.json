@@ -13,5 +13,11 @@
     "dotenv": "^16.4.5",
     "jsdom": "^25.0.1",
     "openai": "^4.71.1"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
   }
 }

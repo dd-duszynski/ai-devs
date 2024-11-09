@@ -1,8 +1,8 @@
 import 'dotenv/config';
 
 async function solvePoligonAPITask() {
-  if (!process.env.API_KEY) {
-    throw new Error('API_KEY is not defined in environment variables');
+  if (!process.env.AI_DEVS_API_KEY) {
+    throw new Error('AI_DEVS_API_KEY is not defined in environment variables');
   }
   try {
     const response = await fetch(process.env.POLIGON_DANE_URL);
@@ -10,7 +10,7 @@ async function solvePoligonAPITask() {
     const data = text.trim().split('\n');
     const payload = {
       task: process.env.POLIGON_TASK_NAME,
-      apikey: process.env.API_KEY,
+      apikey: process.env.AI_DEVS_API_KEY,
       answer: data,
     };
     const result = await fetch(process.env.POLIGON_VERIFY_URL, {
