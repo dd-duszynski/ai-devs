@@ -23,7 +23,7 @@ async function askGPT4(question) {
     messages: [
       {
         role: 'system',
-        content: 'You are a helpful assistant. Ask as shortly as possible.',
+        content: 'You are a helpful assistant. Answer as shortly as possible.',
       },
       {
         role: 'user',
@@ -77,7 +77,7 @@ async function solveTask() {
       apikey: process.env.AI_DEVS_API_KEY,
       answer: fileJSON,
     };
-    const result = await fetch(process.env.S01E03_VERIFY_URL, {
+    const result = await fetch(process.env.CENTRALA_REPORT_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
